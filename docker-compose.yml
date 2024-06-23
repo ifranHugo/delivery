@@ -1,0 +1,13 @@
+### MySQL database for Orders
+services:
+  db-delivery:
+    container_name: db-delivery
+    image: mysql:8.0.33
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: delivery
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: Test
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306  # Corregido: mapear el puerto 3306 del contenedor al 3306 del host
